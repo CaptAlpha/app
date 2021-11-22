@@ -1,10 +1,12 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 import joblib
-
+import os
 app = Flask(__name__)
-model1 = joblib.load(open('ML-Models\Diabetes\model.pkl', 'rb'))
-model2 = joblib.load(open('ML-Models\Heart\model.pkl', 'rb'))
+path1 = os.path.join('.', 'ML-Models\Diabetes\model.pkl')
+path2 = os.path.join('.', 'ML-Models\Heart\model.pkl')
+model1 = joblib.load(open(path1, 'rb'))
+model2 = joblib.load(open(path2, 'rb'))
 
 
 @app.route('/', methods=['GET', 'POST'])
