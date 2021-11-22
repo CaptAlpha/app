@@ -4,8 +4,9 @@ import joblib
 import os
 app = Flask(__name__)
 
-path1 = os.path.realpath('ML-Models\Diabetes\model.pkl')
-path2 = os.path.realpath('ML-Models\Heart\model.pkl')
+#get path of model-d
+path1 = os.path.join(os.path.dirname(__file__), 'model-d.pkl')
+path2 = os.path.join(os.path.dirname(__file__), 'model-h.pkl')
 
 
 model1 = joblib.load(open(path1, 'rb'))
