@@ -3,8 +3,9 @@ from flask import Flask, request, jsonify, render_template
 import joblib
 import os
 app = Flask(__name__)
-path1 = os.path.join('.', 'ML-Models\Diabetes\model.pkl')
-path2 = os.path.join('.', 'ML-Models\Heart\model.pkl')
+path1 = os.path.join(os.path.dirname('ML-Models\Diabetes\model.pkl'), 'model.pkl')
+path2 = os.path.join(os.path.dirname('ML-Models\Heart\model.pkl'), 'model.pkl')
+
 model1 = joblib.load(open(path1, 'rb'))
 model2 = joblib.load(open(path2, 'rb'))
 
